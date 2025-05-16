@@ -1,14 +1,19 @@
 import { useState } from "react";
 
-export const AddCategory = () => {
+interface Props {
+  setCategories:  (value: React.SetStateAction<string[]>) => void;
+}
+
+export const AddCategory = ( { setCategories }: Props ) => {
   const [inputValue, setInputValue] = useState('One Punch');
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   }
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('<--------------- JK AddCategory --------------->');
-    console.log(inputValue);
+    if( inputValue.trim().length <= 1) return;
+    setCategories( categories => [ inputValue, ...categories, ] );
+    setInputValue('');
   }
   return(
     <>
