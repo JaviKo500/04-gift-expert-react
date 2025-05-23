@@ -10,7 +10,5 @@ export const getGifts = async ( category: string ): Promise<GiftInterface[]> => 
     title: gif.title,
     url: gif.images.downsized_medium.url,
   }));
-  console.log('<--------------- JK GetGifts --------------->');
-  console.log(gifts);
   return gifts;
 }
