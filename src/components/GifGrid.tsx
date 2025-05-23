@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+
+import { GifItem } from './GifItem';
+
 import { getGifts } from "../helpers/getGifts";
-import type { GiftInterface } from "../interfaces/gift.interface";
+
+import type { GiftInterface } from "../interfaces/gif.interface";
 
 export const GifGrid = ({ category }: { category: string }) => {
   //* rebuild the gif's when the category changes
@@ -18,14 +22,14 @@ export const GifGrid = ({ category }: { category: string }) => {
   if ( gifs.length ) {
     return (
       <>
-        <h2>{category}</h2>
-        <ol>
+        <h1>{category}</h1>
+        <div className="card-grid">
           {
-            gifs.map( ( { id, title } ) => {
-              return <li key={id}>{title}</li>
+            gifs.map( ( gif ) => {
+              return <GifItem key={gif.id} {...gif} />
             })
           }
-        </ol>
+        </div>
       </>
     );  
   }
