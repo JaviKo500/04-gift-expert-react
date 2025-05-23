@@ -1,4 +1,4 @@
-import { GifItem } from './GifItem';
+import { GifItem } from './index';
 
 import { useFetchGifs } from "../hooks/use-fetch-gifs";
 

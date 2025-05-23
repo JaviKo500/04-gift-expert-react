@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import type { GifInterface } from "../interfaces/gif.interface";
-import { getGifts } from "../helpers/getGifts";
+import { useEffect, useState } from 'react';
+import type { GifInterface } from '../interfaces';
+import { getGifts } from '../helpers/getGifts';
 
 export const useFetchGifs = ( category: string ): { gifs: GifInterface[], isLoading: boolean } => {
   const [gifs, setGifs] = useState<GifInterface[]>([]);

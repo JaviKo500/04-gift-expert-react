@@ -1,5 +1,4 @@
-import type { GifApiInterface } from "../interfaces/gif-api.interface";
-import type { GifInterface } from "../interfaces/gif.interface";
+import type { GifApiInterface, GifInterface } from '../interfaces';
 
 export const getGifts = async ( category: string ): Promise<GifInterface[]> => {
   const url = `https://api.giphy.com/v1/gifs/search?api_key=JYFliq5Q3HMvcD6QLDTYzXDx6EvzlQfN&q=${category}&limit=10`;
