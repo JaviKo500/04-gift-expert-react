@@ -17,7 +17,7 @@ export const AddCategory = ( { onNewCategory }: Props ) => {
   }
   return(
     <>
-      <h5>Add a category</h5>
+      <h4>Add a category</h4>
       <form onSubmit={onSubmit}>
         <input type="text" 
           placeholder="Search gift" 
