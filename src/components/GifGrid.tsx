@@ -1,25 +1,12 @@
-import { useEffect, useState } from "react";
-
 import { GifItem } from './GifItem';
 
-import { getGifts } from "../helpers/getGifts";
-
-import type { GiftInterface } from "../interfaces/gif.interface";
+import { useFetchGifs } from "../hooks/use-fetch-gifs";
 
 export const GifGrid = ({ category }: { category: string }) => {
+  const { gifs, isLoading } = useFetchGifs(category);
   //* rebuild the gif's when the category changes
-  const [gifs, setGifts] = useState<GiftInterface[]>([]);
-  const getNewGifs = async (category: string) => {
-    const newGifts = await getGifts(category);
-    setGifts(newGifts);
-  }
-  useEffect(
-    () => {
-      getNewGifs(category);
-    },
-    [ category ]
-  );
-  if ( gifs.length ) {
+
+  if ( !isLoading ) {
     return (
       <>
         <h1>{category}</h1>

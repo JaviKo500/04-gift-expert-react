@@ -1,4 +1,4 @@
-export interface GiftInterface {
+export interface GifInterface {
   id: string;
   title: string;
   url: string;
