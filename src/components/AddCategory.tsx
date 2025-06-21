@@ -18,7 +18,7 @@ export const AddCategory = ( { onNewCategory }: Props ) => {
   return(
     <>
       <h4>Add a category</h4>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} aria-label="form">
         <input type="text" 
           placeholder="Search gift" 
           value={inputValue}
