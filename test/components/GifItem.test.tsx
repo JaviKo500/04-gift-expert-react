@@ -9,7 +9,6 @@ describe('GifItem.test', () => {
     expect( container ).toMatchSnapshot();
   });
 
-
   test( 'Should render with alt and uir image', () => {
     render( <GifItem title={title} url={url} /> );
     const image = screen.getByRole('img');
